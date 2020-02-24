@@ -1,0 +1,38 @@
+--- SDL2-2.0.10/src/video/SDL_video.c	2019-07-25 06:32:37.000000000 +0200
++++ SDL2-2.0.10-patched/src/video/SDL_video.c	2020-02-24 11:55:41.566288146 +0100
+@@ -2174,7 +2174,7 @@
+     }
+ 
+     window->is_hiding = SDL_TRUE;
+-    SDL_UpdateFullscreenMode(window, SDL_FALSE);
++    /* SDL_UpdateFullscreenMode(window, SDL_FALSE); */
+ 
+     if (_this->HideWindow) {
+         _this->HideWindow(_this, window);
+@@ -2234,7 +2234,7 @@
+         return;
+     }
+ 
+-    SDL_UpdateFullscreenMode(window, SDL_FALSE);
++    //SDL_UpdateFullscreenMode(window, SDL_FALSE);
+ 
+     if (_this->MinimizeWindow) {
+         _this->MinimizeWindow(_this, window);
+@@ -2587,7 +2587,7 @@
+ void
+ SDL_OnWindowHidden(SDL_Window * window)
+ {
+-    SDL_UpdateFullscreenMode(window, SDL_FALSE);
++    //SDL_UpdateFullscreenMode(window, SDL_FALSE);
+ }
+ 
+ void
+@@ -2600,7 +2600,7 @@
+ void
+ SDL_OnWindowMinimized(SDL_Window * window)
+ {
+-    SDL_UpdateFullscreenMode(window, SDL_FALSE);
++    //SDL_UpdateFullscreenMode(window, SDL_FALSE);
+ }
+ 
+ void
